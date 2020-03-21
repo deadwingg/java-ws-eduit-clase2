@@ -6,7 +6,7 @@ import javax.xml.ws.Endpoint;
 
 public class ProductoWSServiceMain {
     public static void main(String[] args) {
-        Endpoint.publish("http://localhost:8080/", new ProductoWSServiceImpl());
+        Endpoint.publish("http://localhost:8000/", new ProductoWSServiceImpl());
         System.out.println("Publicado");
     }
 }

@@ -10,6 +10,7 @@ import javax.xml.ws.Action;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
 import com.deadwingg.ws.soapserver.ObjectFactory;
+import com.deadwingg.ws.soapserver.Producto;
 
 
 /**
@@ -45,5 +46,20 @@ public interface ProductoWSService {
         double arg1,
         @WebParam(name = "arg2", targetNamespace = "")
         double arg2);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns com.deadwingg.ws.soapserver.Producto
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getProducto", targetNamespace = "http://soapserver.ws.deadwingg.com/", className = "com.deadwingg.ws.soapserver.GetProducto")
+    @ResponseWrapper(localName = "getProductoResponse", targetNamespace = "http://soapserver.ws.deadwingg.com/", className = "com.deadwingg.ws.soapserver.GetProductoResponse")
+    @Action(input = "http://soapserver.ws.deadwingg.com/ProductoWSService/getProductoRequest", output = "http://soapserver.ws.deadwingg.com/ProductoWSService/getProductoResponse")
+    public Producto getProducto(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
 
 }

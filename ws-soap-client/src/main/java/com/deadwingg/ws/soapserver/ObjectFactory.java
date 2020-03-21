@@ -24,7 +24,9 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _GetProducto_QNAME = new QName("http://soapserver.ws.deadwingg.com/", "getProducto");
     private final static QName _Calcular_QNAME = new QName("http://soapserver.ws.deadwingg.com/", "calcular");
+    private final static QName _GetProductoResponse_QNAME = new QName("http://soapserver.ws.deadwingg.com/", "getProductoResponse");
     private final static QName _CalcularResponse_QNAME = new QName("http://soapserver.ws.deadwingg.com/", "calcularResponse");
 
     /**
@@ -32,6 +34,22 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link GetProducto }
+     * 
+     */
+    public GetProducto createGetProducto() {
+        return new GetProducto();
+    }
+
+    /**
+     * Create an instance of {@link GetProductoResponse }
+     * 
+     */
+    public GetProductoResponse createGetProductoResponse() {
+        return new GetProductoResponse();
     }
 
     /**
@@ -51,12 +69,38 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Producto }
+     * 
+     */
+    public Producto createProducto() {
+        return new Producto();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetProducto }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soapserver.ws.deadwingg.com/", name = "getProducto")
+    public JAXBElement<GetProducto> createGetProducto(GetProducto value) {
+        return new JAXBElement<GetProducto>(_GetProducto_QNAME, GetProducto.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Calcular }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://soapserver.ws.deadwingg.com/", name = "calcular")
     public JAXBElement<Calcular> createCalcular(Calcular value) {
         return new JAXBElement<Calcular>(_Calcular_QNAME, Calcular.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetProductoResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soapserver.ws.deadwingg.com/", name = "getProductoResponse")
+    public JAXBElement<GetProductoResponse> createGetProductoResponse(GetProductoResponse value) {
+        return new JAXBElement<GetProductoResponse>(_GetProductoResponse_QNAME, GetProductoResponse.class, null, value);
     }
 
     /**
